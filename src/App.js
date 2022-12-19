@@ -7,6 +7,9 @@ const [Data,setData] = useState([{}])
   return (
     <div className='
     flex
+    flex-col
+    justify-center
+    items-center
     p-[25px]
      '>
       <input className='
