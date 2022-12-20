@@ -7,7 +7,6 @@ function App() {
 const key = `d4153b342010ef4174468b6454bc0e26`;
 const [Data,setData] = useState([{}])
 const [City,setCity] = useState("")
-
 const url = `https://api.openweathermap.org/data/2.5/weather?q=${City}&units=imperial&appid=${key}`
 // getWeather Data
 
@@ -23,6 +22,8 @@ const getWeather = (event) =>{
 }
 
 
+
+
   return (
     <div>
       <Header />
@@ -34,14 +35,17 @@ const getWeather = (event) =>{
 
       {typeof Data.main ==='undefined'?(
         <div className='mt-[4rem]'>
-          <p>Welcome to Weather App Enter a City to Proceed !</p>
+          <p className='text-semibold text-lg	'>Welcome to Weather App Enter a City to Proceed ! 😊 </p>
         </div>
       ):(
         <div className='mt-[50px] flex flex-col align-center'>
           <p className='text-[30px] mt-5'>{Data.name}  ,  {Data.sys.country} </p>
-          <p>{Math.ceil(Data.main.temp)} °F</p>
-          <p>{Data.weather[0].main}</p>
-          <p>{Data.wind.speed} mph</p>
+          <div className='flex'>
+          <p className='text-[90px] mt-2'>{Math.ceil(Data.main.temp)} °F</p>
+          </div>
+          <p className='text-[25px] mt-2'><span className='text-orange-500 text-semibold'>Feels Like : </span>{Data.weather[0].main}</p>
+        
+          <p className='text-[25px] mt-2'><span className='text-orange-500 text-semibold'>Wind Speed : </span>{Data.wind.speed} mph</p>
           </div>
       )}
     </div>
