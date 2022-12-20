@@ -37,8 +37,8 @@ const getWeather = (event) =>{
           <p>Welcome to Weather App Enter a City to Proceed !</p>
         </div>
       ):(
-        <div className='mt-[100px]'>
-          <p>{Data.name}  ,  {Data.sys.country} </p>
+        <div className='mt-[50px] flex flex-col align-center'>
+          <p className='text-[30px] mt-5'>{Data.name}  ,  {Data.sys.country} </p>
           <p>{Math.ceil(Data.main.temp)} °F</p>
           <p>{Data.weather[0].main}</p>
           <p>{Data.wind.speed} mph</p>
